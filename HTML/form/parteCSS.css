@@ -1,0 +1,15 @@
+h1 {
+    background-color: rgb(100, 230, 64);
+}
+
+.fundoVermelho { /* para criar uma classe em css*/
+    background-color: blueviolet;
+}
+
+.negrito {
+    font-weight: bold;
+}
+
+#textoPrincipal { /* para aplicar css para um tipo de id*/
+    font-size: 40px;
+}

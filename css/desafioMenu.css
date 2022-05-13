@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    padding: 0%;
+}
+
+body {
+    margin: 0%;
+    font-family: 'Oswald', sans-serif;
+    background-color: lightgray;
+}
+
+header, nav {
+    display: inline-flexbox;
+}
+.cabecalho {
+    background-color: #333;
+    border-bottom: solid rgb(59, 127, 231) 3px;
+    height: 80px;
+    box-sizing: content-box; /*o tamanho de acordo com o conteúdo*/
+}
+.logo { /*area do logo*/
+    display: inline-block;
+    height: 80px;
+    padding: 15px;
+}
+.logo img { /*aqui se considera a imagem, ficando dentro da area de cabeçalho*/
+    height: 100%;
+}
+.menu-toggle {
+    float: right;
+    color: #eee;
+    background-color: #555;
+    border: solid 1px #777;
+    border-radius: 5px;
+    height: 40px;
+    padding: 10px 20px;
+    margin: 20px 15px;
+}
+
+.menu {
+    display: inline-block;
+    vertical-align: top;
+    height: 80px;
+    padding: 25px; /*padding fará parte dos 80 (faz parte do cálculo), graças ao content box la em cima*/
+}
+.menu ul {
+    margin: 0%;
+    padding: 0%;
+    border: solid red 2px;
+}
+.menu li {
+    display: inline-block;
+    border: solid red 2px;
+}
+.cabecalho a {
+    text-decoration: none;
+    color: #eee;
+    font-size: 1.3em;
+}
+.menu a {
+    padding: 15px;
+}
+
+.autenticacao{
+    float: right;
+    height: 80px;
+    padding: 25px;
+}
+.menu a:hover, .menu a.selected { /*servindo para passda de mouse e p/ qnd estiver selecionado*/
+    background-color: #4faddb;
+    color: #000;
+}
+.botao {
+    border-radius: 30px;
+    padding: 10px 25px;
+    margin: 10px;
+}
+.destaque {
+    background-color: #f50a31;
+    color: #fff;
+}
+@media (min-width: 680px) {
+    .menu-toggle {
+        display: none;
+    }
+}
+
+@media (max-width: 680px) {
+    .menu {
+        display: none;
+    }
+}
+
+@media (max-width: 910px) {
+    .autenticacao {
+        display: none;
+    }
+}

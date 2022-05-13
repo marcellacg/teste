@@ -1,0 +1,48 @@
+<h1>FORMULARIO</h1>
+
+<form method="POST">
+    <input type="hidden" name="id" value="3"> <!--mt usado-->
+    <input type="text" name="nome">
+    <input type="password" name="senha">
+    <textarea name="bio" cols="30" rows="10"></textarea>
+    <div>
+        <input type="radio" name="tipo" value="Admin"> Admin
+        <input type="radio" name="tipo" value="Regular"> Regular
+        <input type="radio" name="tipo" value="Professor"> Professor
+    </div>
+    <div>
+        <input type="checkbox" name="ativo"> Ativo
+    </div>
+
+    <select name="estado">
+        <option value="">Selecione</option> //com o value vazio, o body-parser retorna um key-value vazio
+        <option value="ac">Acre</option>
+        <option value="ba">Bahia</option>
+        <option value="ce">Ceará</option>
+    </select>
+
+    <select name="interesses" multiple size="5">
+        <option value="js">Javascript</option>
+        <option value="java">Java</option>
+        <option value="php">PHP</option>
+        <option value="python">Python</option>
+        <option value="go">Go</option>
+        <option value="c">C</option>
+    </select>
+
+    <button formaction="http://localhost:8080/usuarios">Incluir</button>
+    <button formaction="http://localhost:8080/usuarios/3">Alterar</button>
+</form>
+
+<style>
+    input, textarea, select {
+        display: block;
+        margin-bottom: 10px;
+    }
+    
+    input[type=radio], input[type=checkbox] {
+        display: inline; /*especificamente para o input radio, quero que seja inline*/
+    }
+
+
+</style>

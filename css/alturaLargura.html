@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Altura e Largura</title>
+    <style>
+        /*html {
+            height: 100%
+        }
+        */
+        body {
+            font-size: 40px;
+            background-color: coral;
+            /*height: 100%*/
+        }
+
+        div {
+            background-color: seagreen;
+        }
+
+        span {
+            background-color: dodgerblue;
+        }
+        span, div {
+            width: 50%;
+            height: 50%;
+            height: 250px; /*div funcionando com largura fixa px, pq a porcentagem 
+            vai em cima do body, já que a div tá dentro do body*/
+        }
+        /*com html e body setados em 100% de altura, o height de 50% funciona, 
+        pq todos os parents que ele ta relacionado tem o temanho suficiente pra essa div crescer */
+    </style>
+</head>
+
+<body>
+    <div>Título</div>
+    <span>Subtítulo</span>
+</body>
+
+</html>

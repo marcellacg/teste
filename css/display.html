@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Display</title>
+    <style>
+        body {
+            font-size: 40px;
+            color: #fff;
+            background-color: coral;
+        }
+        ul {
+            padding: 0;
+        }
+        div {
+            background-color: seagreen;
+        }
+        span {
+            background-color: dodgerblue;
+        }
+        li {
+            background-color: purple;
+        }
+        div, span, li {
+            width: 50%;
+            width: 200px; /*width e height não faz cócegas no span*/
+            height: 80px;
+            padding-top: 30px;
+            text-align: center;
+            /*display: block;*/ /*cada elemento vai ter sua própria linha*/
+            display: inline-block; /*ler os comentários embaixo*/
+            /*display: inline; */ /*texto1, texto2 e texto3 ficam alinhados. os itens, por serem li, se alinham, mas não ficam na mesma linha dos textos*/
+        } /*e as propriedades de width e height são ignoradas*/
+        /*para serem consideradas, se coloca o display inline-block*/
+    </style>
+</head>
+
+<body>
+    <div>Texto 1</div>
+    <span>Texto 2</span>
+    <span>Texto 3</span>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+</body>
+
+</html>

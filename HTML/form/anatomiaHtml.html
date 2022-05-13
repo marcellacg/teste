@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Curso Coder</title>
+    </head>
+    <body>
+        <header>
+            <h1>Exercícios HTML</h1> <!-- As tags h1, h3, etc tem GRAUS DE IMPORTÂNCIA, principalmente qnd se trata de busca em browsers -->
+        </header>
+        <nav> <!-- área de navegação -->
+            <a href="justteste.html">00 - teste1</a> |
+            <a href="texto2.html">01 - Texto 1</a> |
+            <a href="links.html">Links</a> |
+            <a href="tabelas.html">Tabelas</a> |
+            <a href="formulario.html">Formulário</a> |
+            <a href="imagens.html">Imagens</a>
+         </nav>
+        <section id="conteudo">
+            CONTEÚDO 
+            <hr \> <!-- hr para uma linha divisória-->
+            <p> <!--parágrafo-->
+                <u><br>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</u><!--underline--></br>
+                <sup><br>Ducimus beatae minus accusantium aperiam, quisquam possimus</sup> <!--sobrescrito--></br>
+                <i><br>corrupti inventore dolorem eaque autem sunt, iste dolores</i> <!--itálico--></br>
+                <b><br>atque ea non dolore totam delectus animi?</b></br> <!--negrito-->
+                <hr \>
+                Renderização padrão de tags e pode ser renderizado
+                <p><strong>Cuidado!</strong>Alta vontagem! <em>Somente pessoal autorizado.</em></p>
+                <blockquote cite="https://en.wikipedia.org/wiki/Wikipedia">Citações longas</blockquote>
+                <p>Fulano disse que: <q>tempor incidium ut labore et dolore.</q></p><!--citações curtas-->
+                <p><dfn>Buraco negro</dfn>é a região...</p> <!--definição-->
+                <p>O oscar vai para<del>La La Land</del> <ins>Moonlight</ins></p><!--riscado dps sublinhado-->
+                <hr />
+                <h1>LISTAS</h1>
+                <h2>Listas ordenadas</h2>
+                <ol>
+                    <li>Bia</li>
+                    <li>Pedro</li>
+                    <li>Ana</li>
+                    <li>João</li>
+                </ol>
+                <h2>Listas não ordenadas</h2>
+                <ul>
+                    <li>Queijo</li>
+                    <li>Leite</li>
+                    <li>Arroz</li>
+                    <li>Pao</li>
+                </ul>
+                <h2>Listas de definição</h2>
+                <h3>~Principais termos do glossário de cloud computing</h3>
+                <dl>
+                    <dt>BaaS</dt> <!--termo-->
+                    <dd>Backend como serviço</dd> <!--definição-->
+                    <dt>IaaS</dt>
+                    <dd>Infraestrutura como serviço</dd>
+                    <dt>PaaS</dt>
+                    <dd>Plataforma como serviço</dd>
+                    <dt>SaaS</dt>
+                    <dd>Software como serviço</dd>
+                </dl>
+                <hr />
+                <h1>Listas aninhadas</h1>
+                <ul class="tree"> <!--clase tree ligada com o link de cascade sheet disponibilizado-->
+                    <li>
+                        <span pasta-componente>backend</span>
+                        <ul>
+                            <li>
+                                <span pasta-componente>app</span>
+                                <ul>
+                                    <li>produto.js</li>
+                                    <li>usuario.js</li>
+                                    <li>venda.js</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span pasta-componente>config</span>
+                                <ul>
+                                    <li>banco.js</li>
+                                    <li>rotas.js</li>
+                                    <li>servidor.js</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span pasta-componente>frontend</span>
+                        <ul>
+                            <li>
+                                <span pasta-componente>public</span>
+                                <ul>
+                                    <li>app.css</li>
+                                    <li>app.js</li>
+                                    <li>index.html</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css"> <!--folha de estilo para as listas aninhadas-->
+
+            </p>
+        </section>
+        <aside>
+            LATERAL
+        </aside> <!-- Exemplo para colocar propagandas/tópicos, etc -->
+        <footer>
+            <br>
+            Rodapé - COD3R
+        </footer>
+        <script>
+            document.querySelectorAll('a').forEach(link => {
+                const conteudo = document.getElementById('conteudo')
+                link.onclick = function(e) {
+                    e.preventDefault()
+                    fetch(link.href)
+                        .then(resp => resp.text())
+                        .then(html => conteudo.innerHTML = html)
+                }
+            })
+
+            document.querySelectorAll('[pasta-componente]').forEach(folder => {
+                folder.onclick = function(e) {
+                    const ul = folder.nextElementSibling /*que é o próximo elemento dentro do mencionado span*/
+                    const disp = ul.style.display
+                    ul.style.display = disp === 'none' ? 'block' : 'none'
+                }
+            })
+        </script>
+    </body>
+</html>
